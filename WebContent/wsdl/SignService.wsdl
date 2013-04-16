@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.wikilibras.usp.br" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.wikilibras.usp.br" xmlns:intf="http://ws.wikilibras.usp.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.wikilibras.usp.br" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getSign">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSignResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getSignResponse">
+
+      <wsdl:part element="impl:getSignResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSignRequest">
+
+      <wsdl:part element="impl:getSign" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SignService">
+
+      <wsdl:operation name="getSign">
+
+         <wsdl:input message="impl:getSignRequest" name="getSignRequest"/>
+
+         <wsdl:output message="impl:getSignResponse" name="getSignResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SignServiceSoapBinding" type="impl:SignService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getSign">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSignRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSignResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SignServiceService">
+
+      <wsdl:port binding="impl:SignServiceSoapBinding" name="SignService">
+
+         <wsdlsoap:address location="http://localhost:8080/WikiLibras/services/SignService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
