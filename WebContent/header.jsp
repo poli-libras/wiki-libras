@@ -5,11 +5,11 @@
 	<h1 class="headertext">Wiki-Libras</h1>
 	
 	<div id="menu">
-	<a href="/<%=application.getServletContextName()%>/index.jsp">Início</a> 
-	<a href="/wikilibras/search/searchForm">Pesquisar sinal</a> 
-	<a href="/wikilibras/sign/newSignForm">Incluir sinal</a> 
-	<a href="/wikilibras/sign/editSignForm">Alterar sinal</a> 
-	<a href="/wikilibras/ws.jsp">Web Services</a> 
-	<a href="/wikilibras/about.jsp">Sobre</a>
+		<a href="${ pageContext.request.contextPath }/index.jsp">Início</a> 
+		<a href="${ pageContext.request.contextPath }/search/searchForm">Pesquisar sinal</a> 
+		<a href="${ pageContext.request.contextPath }/sign/newSignForm">Incluir sinal</a> 
+		<a href="${ pageContext.request.contextPath }/sign/editSignForm">Alterar sinal</a> 
+		<a href="${ pageContext.request.contextPath }/ws.jsp">Web Services</a> 
+		<a href="${ pageContext.request.contextPath }/about.jsp">Sobre</a>
 	</div>
 </div>
