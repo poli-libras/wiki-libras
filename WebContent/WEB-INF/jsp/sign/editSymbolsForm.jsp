@@ -4,10 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<jsp:include page="/includes/globalInclude.jsp"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/wikilibras.css" type="text/css">
 <title>WikiLibras</title>
-<script src="/wikilibras/scripts/sign_form.js" type="text/javascript"></script>
-<link rel="stylesheet" href="/wikilibras/css/wikilibras.css" type="text/css">
 </head>
 
 <body>
@@ -26,16 +25,16 @@
     <c:forEach var="symbol" items="${symbols}">
     	<c:set var="index" value="${index + 1}" />	
     	<li>Símbolo ${index} - 
-    		<a href="/wikilibras/sign/symbol?index=${index}">Editar</a> - 
+    		<a href="${pageContext.request.contextPath}/sign/symbol?index=${index}">Editar</a> - 
     		<a href="">Excluir</a></li>
     </c:forEach>
     </ul>
     
-    <p><a href="/wikilibras/sign/symbol?index=${index+1}">Novo símbolo</a></p>
+    <p><a href="${pageContext.request.contextPath }/sign/symbol?index=${index+1}">Novo símbolo</a></p>
     
-    <p><a href="/wikilibras/sign/editSyntaxForm">Voltar para sintaxe</a></p>
+    <p><a href="${pageContext.request.contextPath }/sign/editSyntaxForm">Voltar para sintaxe</a></p>
     
-    <p><a href="/wikilibras/sign?name=${sign.name}">Finalizar</a></p>
+    <p><a href="${pageContext.request.contextPath }/sign?name=${sign.name}">Finalizar</a></p>
   </fieldset>
 </div>
 </body>

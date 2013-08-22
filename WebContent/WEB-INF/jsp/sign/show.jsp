@@ -4,20 +4,29 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/wikilibras/css/wikilibras.css" type="text/css">
-<link rel="stylesheet" href="/wikilibras/css/tabs.css" type="text/css">
+<jsp:include page="/includes/globalInclude.jsp"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/tabs.css" type="text/css">    
+<script src="${pageContext.request.contextPath}/scripts/activatables.js" type="text/javascript"></script>
+<script type="text/javascript">
+  symbols_list = new Array();
+  i = 0;
+  <c:forEach var="sym" items="${sign.symbols}">
+    i++;
+    symbols_list.push('symbol-' + i);
+  </c:forEach>
+      
+  activatables('symbol', symbols_list);
+  
+
+  function deleteSign() {
+  	text = "Quer mesmo deletar o sinal ${sign.name}?";
+  	ok = confirm(text);
+  	if (ok)
+  		window.location = "${deleteLink}";
+  }
+</script>
 <title>WikiLibras</title>
 </head>
-
-<script>
-function deleteSign() {
-	text = "Quer mesmo deletar o sinal ${sign.name}?";
-	ok = confirm(text);
-	if (ok)
-		window.location = "${deleteLink}";
-}
-</script>
 
 <body>
 
@@ -95,7 +104,7 @@ function deleteSign() {
     	
  		<p><img id="rightShapeImg" alt="configuração de mão dominante"
  			height="100" width="100" 
- 			src="/wikilibras/media/maos/${sym.rightHand.shape}.JPG"></p>	
+ 			src="${pageContext.request.contextPath}/media/maos/${sym.rightHand.shape}.JPG"></p>	
     	
     	<c:if test="${sym.rightHand.movement != null}">
     		<ul><li>Movimento da mão dominante:
@@ -120,7 +129,7 @@ function deleteSign() {
     		
   		 	<p><img id="leftShapeImg" alt="configuração de mão não-dominante" 
 		 	    height="100" width="100" 
- 			    src="/wikilibras/media/maos/${sym.leftHand.shape}.JPG"></p>	
+ 			    src="${pageContext.request.contextPath }/media/maos/${sym.leftHand.shape}.JPG"></p>	
     
     		<c:if test="${sym.leftHand.movement != null}">
     			<ul><li>Movimento da mão não-dominante:
@@ -171,18 +180,6 @@ function deleteSign() {
     	</li></ul></c:if>
     </div>
   </c:forEach>
-    
-  <script src="/wikilibras/scripts/activatables.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    symbols_list = new Array();
-    i = 0;
-    <c:forEach var="sym" items="${sign.symbols}">
-      i++;
-      symbols_list.push('symbol-' + i);
-    </c:forEach>
-        
-    activatables('symbol', symbols_list);
-  </script> 
 </div>
 </body>
 </html>

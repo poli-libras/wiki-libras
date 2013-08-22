@@ -4,10 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/wikilibras/css/wikilibras.css" type="text/css">
+<jsp:include page="/includes/globalInclude.jsp"/>
+<script src="${pageContext.request.contextPath}/scripts/sign_form.js" type="text/javascript"></script>
 <title>WikiLibras</title>
-<script src="/wikilibras/scripts/sign_form.js" type="text/javascript"></script>
 
 <!-- cria vetores javascript dinâmicamente 
 	(na verdade, transfere o shapesMap e o locationsMap para o javascript;

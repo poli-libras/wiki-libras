@@ -4,10 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<jsp:include page="/includes/globalInclude.jsp"/>
+<script src="${pageContext.request.contextPath}/scripts/sign_form.js" type="text/javascript"></script>
 <title>WikiLibras</title>
-<script src="/wikilibras/scripts/sign_form.js" type="text/javascript"></script>
-<link rel="stylesheet" href="/wikilibras/css/wikilibras.css" type="text/css">
 
 <!-- cria vetores javascript dinâmicamente 
 	(na verdade, transfere o shapesMap e o locationsMap para o javascript;
@@ -127,10 +126,10 @@
 			</div>		
 			
 			<p><c:if test="${hand.shape != null}">
-				<img id="shapeImg" alt="configuração de mão" src="/wikilibras/media/maos/${hand.shape}.JPG">	
+				<img id="shapeImg" alt="configuração de mão" src="${pageContext.request.contextPath}/media/maos/${hand.shape}.JPG">	
 			</c:if>
 			<c:if test="${hand.shape == null}">
-				<img id="shapeImg" alt="configuração de mão" src="/wikilibras/media/maos/INDICADOR.JPG">	
+				<img id="shapeImg" alt="configuração de mão" src="${pageContext.request.contextPath}/media/maos/INDICADOR.JPG">	
 			</c:if></p>
 			
 			<div class="option">
