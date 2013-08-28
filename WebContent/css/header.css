@@ -1,0 +1,93 @@
+#header{
+	background:url(../media/images/bt0.png);
+	width:983px;
+	overflow:hidden;
+}
+
+#header a img{
+	display:none;
+}
+
+body:after{
+    display:none;
+    content: url(../media/images/btInicio_over.png) url(../media/images/btPesquisar_over.png) url(../media/images/btIncluir_over.png) url(../media/images/btAlterar_over.png) url(../media/images/btServices_over.png) url(../media/images/btSobre_over.png);
+}
+
+#header img
+{
+	display:block;
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+#header_menu a
+{
+	float:left;
+	display:block;
+}
+
+#header_menu + *
+{
+	clear:both;
+}
+
+#btInicio {
+	background-image: url(../media/images/btInicio.png);
+	width:67px;
+	height:35px;
+}
+
+#btInicio:hover {
+	background-image: url(../media/images/btInicio_over.png);
+}
+
+#btPesquisar {
+	background-image: url(../media/images/btPesquisar.png);
+	width:133px;
+	height:35px;
+}
+
+#btPesquisar:hover {
+	background-image: url(../media/images/btPesquisar_over.png);
+}
+
+#btIncluir {
+	background-image: url(../media/images/btIncluir.png);
+	width:107px;
+	height:35px;
+}
+
+#btIncluir:hover {
+	background-image: url(../media/images/btIncluir_over.png);
+}
+
+#btAlterar {
+	background-image: url(../media/images/btAlterar.png);
+	width:111px;
+	height:35px;
+}
+
+#btAlterar:hover {
+	background-image: url(../media/images/btAlterar_over.png);
+}
+
+#btServices {
+	background-image: url(../media/images/btServices.png);
+	width:120px;
+	height:35px;
+}
+
+#btServices:hover {
+	background-image: url(../media/images/btServices_over.png);
+}
+
+#btSobre {
+	background-image: url(../media/images/btSobre.png);
+	width:68px;
+	height:35px;
+}
+
+#btSobre:hover {
+	background-image: url(../media/images/btSobre_over.png);
+}
