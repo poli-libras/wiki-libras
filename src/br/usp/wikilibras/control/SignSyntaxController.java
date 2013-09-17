@@ -8,7 +8,7 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.view.Results;
 import br.usp.libras.sign.Sign;
 import br.usp.libras.sign.VerbType;
-import br.usp.wikilibras.data.SignDaoFactory;
+import br.usp.libras.data.SignDaoFactory;
 
 @Resource
 @Path("/sign")

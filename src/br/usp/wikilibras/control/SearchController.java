@@ -12,8 +12,8 @@ import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.view.Results;
 import br.usp.libras.sign.Sign;
-import br.usp.wikilibras.data.SignDao;
-import br.usp.wikilibras.data.SignDaoFactory;
+import br.usp.libras.data.SignDao;
+import br.usp.libras.data.SignDaoFactory;
 
 @Resource
 public class SearchController {
