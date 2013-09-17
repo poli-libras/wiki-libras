@@ -13,7 +13,7 @@ import br.com.caelum.vraptor.Validator;
 import br.com.caelum.vraptor.validator.ValidationMessage;
 import br.com.caelum.vraptor.view.Results;
 import br.usp.libras.sign.Sign;
-import br.usp.libras.data.SignDaoFactory;
+import br.usp.wikilibras.data.SignDaoFactory;
 
 /**
  * Esse é o controller (mvC) que usa o framework VRaptor para criar o formulário de criação/edição de sinais Possue

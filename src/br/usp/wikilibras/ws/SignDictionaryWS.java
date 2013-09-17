@@ -10,8 +10,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
 import br.usp.libras.sign.Sign;
-import br.usp.libras.data.SignDao;
-import br.usp.libras.data.SignDaoFactory;
+import br.usp.wikilibras.data.SignDao;
+import br.usp.wikilibras.data.SignDaoFactory;
 
 @WebService(endpointInterface="br.usp.wikilibras.ws.ISignDictionaryWS")
 public class SignDictionaryWS implements ISignDictionaryWS {
