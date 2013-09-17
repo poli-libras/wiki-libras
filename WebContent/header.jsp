@@ -8,11 +8,10 @@
 	{
 		$("#header a").each(function ()
 		{
-			console.log(document.URL);
-			console.log(this.href);
 			if (document.URL == this.href)
 			{
-				$(this).children().css("display", "block");
+				$(this).removeClass("btHeader");
+				$(this).addClass("btHeaderSelecionado");
 			}
 		});
 	});
@@ -22,24 +21,12 @@
 	<img src="${ pageContext.request.contextPath }/media/images/banner.png"></img>
 	
 	<div id="header_menu">
-		<a target="_top" id="btInicio"  href="${ pageContext.request.contextPath }/index.jsp">
-			<img src="${ pageContext.request.contextPath }/media/images/btInicio_clicado.png"></img>
-		</a>
-		<a target="_top" id="btPesquisar" href="${ pageContext.request.contextPath }/search/searchForm">
-			<img src="${ pageContext.request.contextPath }/media/images/btPesquisar_clicado.png"></img>
-		</a>
-		<a target="_top" id="btIncluir" href="${ pageContext.request.contextPath }/sign/newSignForm">
-			<img src="${ pageContext.request.contextPath }/media/images/btIncluir_clicado.png"></img>
-		</a>
-		<a target="_top" id="btAlterar" href="${ pageContext.request.contextPath }/sign/editSignForm">
-			<img src="${ pageContext.request.contextPath }/media/images/btAlterar_clicado.png"></img>
-		</a>
-		<a target="_top" id="btServices" href="${ pageContext.request.contextPath }/ws.jsp">
-			<img src="${ pageContext.request.contextPath }/media/images/btServices_clicado.png"></img>
-		</a>
-		<a target="_top" id="btSobre" href="${ pageContext.request.contextPath }/about.jsp">
-			<img src="${ pageContext.request.contextPath }/media/images/btSobre_clicado.png"></img>
-		</a>
+		<a target="_top" id="btInicio" class="btHeader" href="${ pageContext.request.contextPath }/index.jsp"></a>
+		<a target="_top" id="btPesquisar" class="btHeader" href="${ pageContext.request.contextPath }/search/searchForm"></a>
+		<a target="_top" id="btIncluir" class="btHeader" href="${ pageContext.request.contextPath }/sign/newSignForm"></a>
+		<a target="_top" id="btAlterar" class="btHeader" href="${ pageContext.request.contextPath }/sign/editSignForm"></a>
+		<a target="_top" id="btServices" class="btHeader" href="${ pageContext.request.contextPath }/ws.jsp"></a>
+		<a target="_top" id="btSobre" class="btHeader" href="${ pageContext.request.contextPath }/about.jsp"></a>
 	</div>
 	
 	<img src="${ pageContext.request.contextPath }/media/images/banner2.png"></img>
