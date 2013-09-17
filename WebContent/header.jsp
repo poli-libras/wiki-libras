@@ -21,7 +21,7 @@
 	<img src="${ pageContext.request.contextPath }/media/images/banner.png"></img>
 	
 	<div id="header_menu">
-		<a target="_top" id="btInicio" class="btHeader" href="${ pageContext.request.contextPath }/index.jsp"></a>
+		<a target="_top" id="btInicio" class="btHeader" href="${ pageContext.request.contextPath }/"></a>
 		<a target="_top" id="btPesquisar" class="btHeader" href="${ pageContext.request.contextPath }/search/searchForm"></a>
 		<a target="_top" id="btIncluir" class="btHeader" href="${ pageContext.request.contextPath }/sign/newSignForm"></a>
 		<a target="_top" id="btAlterar" class="btHeader" href="${ pageContext.request.contextPath }/sign/editSignForm"></a>
