@@ -14,28 +14,29 @@
 
 <body>
 
-<jsp:include page="/header.jsp"/>
+	<jsp:include page="/header.jsp"/>
 
-<div class="content">
-
-<h2>Inclusão de sinal</h2>
-
-<c:forEach var="error" items="${errors}">
-    ${error.message}<br />
-</c:forEach>
-
-<form method="POST" action="newSign">
-	<fieldset>
-
-	<div class="option">
-		<label for="signname"> Nome do sinal: *</label><br/>
-		<input type="text" class="field" name="sign.name" id="signname">
-	</div>
+	<div class="conteudo" id="passo_1">
+		<h2>Inclusão de sinal</h2>
 		
-	<input class="submit" type="submit" value="Avançar"/>
-	</fieldset>
-</form>
-
-</div>
+		<c:forEach var="error" items="${errors}">
+		    ${error.message}<br />
+		</c:forEach>
+		
+		<form method="POST" action="newSign" target="_top">
+			<fieldset>
+				<div class="option">
+					<span class="nomeCampo" for="signname"> Nome do sinal: *</span>
+					<input type="text" class="textField" name="sign.name" id="signname">
+				</div>
+			</fieldset>	
+			<br>
+			<span><i>*Obrigatório</i></span>
+			<input type="submit" class="submit" value=""></input>
+			<span id="label_btsubmit"><center>Começar</center></span>
+		</form>
+	</div>
+	
 </body>
+
 </html>

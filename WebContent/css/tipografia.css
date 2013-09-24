@@ -1,0 +1,21 @@
+span, input, h1, h2, h3
+{
+	font-family: "Calibri"
+}
+
+h2
+{
+	font-size: 1.4em;
+	font-weight : bold;
+	color: #2d2e59;
+}
+
+fieldset .nomeCampo {
+	text-align: left;
+}
+
+#label_btsubmit{
+	font-weight: bold;
+	font-size: 1.125em;
+	color: #2d2e59;
+}

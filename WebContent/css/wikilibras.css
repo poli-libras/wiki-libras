@@ -5,107 +5,55 @@ a:active { color: blue;}
 
 body {
 	background-color: white;
-	margin: 0px;
-	padding: 0px;
+	margin: 0 auto;
 	font-family: sans-serif;
 	font-size: medium;
+	width:983px;
+	overflow:hidden;
 }
 
-.content {
-	margin: 2em;
+.conteudo {
+	margin: 0 auto;
 }
 
-h1,h2,h3 {
-	font-family: serif;
+#passo_1 {
+	width: 31.2%;
 }
 
 fieldset {
 	display: inline;
-	float: left;
-	min-width: 17em;
-	max-width: 40em;
-	margin: 0 0 3em 0;
-	padding: 5px 1em 1em 1em;
 	background-color: #EEEEEE;
+	padding: 0;
+	margin-bottom: 1.5em;
+	padding-top: 8%;
+	padding-bottom: 8%;
+	border: 0;
+	width: 100%;
 }
 
-fieldset.submit {
-	border: none;
-	background-color: transparent;
-	text-align: center;
+fieldset > * {
+	margin-left: 8%;
 }
 
-fieldset.radio {
-	width: 15em;	
-	margin: 1em 0 2em 0;
-	background-color: #DDDDDD;
+fieldset .textField{
+	margin-top: 1em;
+	width: 88%;
 }
 
-fieldset.radio label {
-	font-weight: normal;
-}
-
-fieldset.radio input {
-	clear: both;
-	float: left;
-	width: auto;
-}
-
-input.field {
+form .submit
+{
+	background-image:url(../media/images/avancar.png);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	width: 53px;
+	height: 64px;
+	border: 0px;
+	cursor: pointer;
 	display: block;
-	width: 15em;
+	margin: 0 auto;
 }
 
-/*input.submit {
-	display: block;
-	width: 15em;	
-}*/
-
-input.submit {
-	float: right;
+form .submit:hover
+{
+	background-position: 0px -64px;
 }
-
-fieldset label {	
-	margin-bottom: 1em;
-	font-weight: bold;
-}
-
-div.option {
-	display: block;
-	margin-bottom: 1em;
-}
-
-div.block {
-  display: block; 
-  min-width: 17em;
-  max-width: 40em;
-  margin: 0 0 3em 0;
-  padding: 5px 1em 1em 1em;
-  background-color: #EEEEEE;
-}
-
-/*
-select {
-	display: block;
-}
-*/
-
-div.help {
-	display: inline;
-	float: left;
-	margin: 1em 1em 1em 1em;
-	border-style: solid;
-	border-width: thin;
-	size: auto;
-	background-color: #f8f28c;
-	padding: 1em 1em 1em 1em;
-	width: 15em;
-	font: small;
-}
-
-div.help label {
-	display: block;
-	font-weight: bold;
-	font: small;
-}
-
