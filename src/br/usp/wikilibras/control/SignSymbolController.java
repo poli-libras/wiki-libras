@@ -12,6 +12,7 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.view.Results;
 import br.usp.libras.sign.Sign;
 import br.usp.libras.sign.symbol.Contact;
+import br.usp.libras.sign.symbol.ContactType;
 import br.usp.libras.sign.symbol.HandSide;
 import br.usp.libras.sign.symbol.Location;
 import br.usp.libras.sign.symbol.LocationGroup;
@@ -70,7 +71,7 @@ public class SignSymbolController {
             }
         }
 
-        result.include("contacts", Contact.values());
+        result.include("contacts", ContactType.values());
         result.include("locations", Location.values());
         result.include("locationGroups", locationGroups);
         result.include("locationsMap", locMap);
@@ -101,27 +102,26 @@ public class SignSymbolController {
     public Sign editSymbol(Symbol symbol, boolean twoHands) {
 
     	// forçando invariantes
-    	if (symbol.getContact() == null || symbol.getContact() == Contact.NENHUM)
-    		symbol.setContactQuantity(0);
-        if (!twoHands) {
-            symbol.setLeftHand(null);
-            symbol.setHandsInUnity(false);
-        }
-        this.signEditionSession.setTwoHands(twoHands);
-        
-        int index = this.signEditionSession.getSignIndex();
-        if (this.signEditionSession.isNewSign() || (this.signEditionSession.getSign().getSymbols().size() < index)) { // criação de símbolo
-            symbol.setSequence(index - 1);
-            this.signEditionSession.getSign().addSymbol(symbol);
-        } else { // edição de símbolo
-            // informações gerais do símbolo são atualizadas
-            Symbol sy = this.signEditionSession.getSign().getSymbols().get(index - 1);
-            sy.setSequence(index - 1);
-            sy.setLocation(symbol.getLocation());
-            sy.setContact(symbol.getContact());
-            sy.setContactQuantity(symbol.getContactQuantity());
-            sy.setHandsInUnity(symbol.isHandsInUnity());
-        }
+//    	if (symbol.getContact() == null || symbol.getContact() == Contact.NENHUM)
+//    		symbol.setContactQuantity(0);
+//        if (!twoHands) {
+//            symbol.setLeftHand(null);
+//        }
+//        this.signEditionSession.setTwoHands(twoHands);
+//        
+//        int index = this.signEditionSession.getSignIndex();
+//        if (this.signEditionSession.isNewSign() || (this.signEditionSession.getSign().getSymbols().size() < index)) { // criação de símbolo
+//            symbol.setSequence(index - 1);
+//            this.signEditionSession.getSign().addSymbol(symbol);
+//        } else { // edição de símbolo
+//            // informações gerais do símbolo são atualizadas
+//            Symbol sy = this.signEditionSession.getSign().getSymbols().get(index - 1);
+//            sy.setSequence(index - 1);
+//            sy.setLocation(symbol.getLocation());
+//            sy.setContact(symbol.getContact());
+//            sy.setContactQuantity(symbol.getContactQuantity());
+//            sy.setHandsInUnity(symbol.isHandsInUnity());
+//        }
 
         // primeiro editar a mão-dominante
         this.result.use(Results.logic()).redirectTo(SignHandController.class).editHandForm(HandSide.RIGHT);
