@@ -1,46 +1,62 @@
-a:link { color: blue;}
-a:visited { color: blue;}
-a:hover { color: red;}
-a:active { color: blue;}
+/*
+*	Estilo geral
+*/
+
+h3
+{
+	margin-left: 39px;
+}
 
 body {
-	background-color: white;
+	background-color: #fefefe;
 	margin: 0 auto;
 	font-family: sans-serif;
 	font-size: medium;
 	width:983px;
-	overflow:hidden;
 }
 
 .conteudo {
 	margin: 0 auto;
 }
 
-#passo_1 {
+#passo_0 {
 	width: 31.2%;
 }
+
+#passo_1 {
+	width: 57.1%;
+}
+
+/*
+*	Estilo para o formulário
+*/
+
 
 fieldset {
 	display: inline;
 	background-color: #EEEEEE;
-	padding: 0;
+	padding: 12px;
 	margin-bottom: 1.5em;
-	padding-top: 8%;
-	padding-bottom: 8%;
 	border: 0;
 	width: 100%;
 }
 
-fieldset > * {
-	margin-left: 8%;
+.option {
+	margin: 12px;
 }
 
-fieldset .textField{
-	margin-top: 1em;
-	width: 88%;
+.nomeCampo
+{
+	margin-bottom: 0.5em;
 }
 
-form .submit
+.textField{
+	width: 258px;
+	border-width: thin;
+	margin-top: 0.5em;
+}
+
+.submit
 {
 	background-image:url(../media/images/avancar.png);
 	background-position: 0px 0px;
@@ -53,7 +69,66 @@ form .submit
 	margin: 0 auto;
 }
 
-form .submit:hover
+.submit:hover
 {
 	background-position: 0px -64px;
+}
+
+.novoCampo
+{
+	cursor: pointer;
+}
+
+#progresso
+{
+	margin: 0 auto;
+	background-image: url(../media/images/linha_fundo.png);
+	background-position: 0px 26px;
+	background-repeat: repeat-x;
+	width: 473px;
+	height: 60px;
+}
+
+.bolinha
+{
+	float: left;	
+	background-image: url(../media/images/linha_ativo.png);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	width: 60px;
+	height: 60px;
+	border: 0px;
+	display: block;
+}
+
+/*
+*	Estilo para interface de ajuda
+*/
+
+
+#textoAjuda
+{
+	position: absolute;
+	background-color: #516f9e;
+	color: #fefefe;
+	width: 222px;
+	padding: 20px 24px;
+	visibility: hidden;
+}
+
+#seta
+{
+	position: absolute;
+	border:0;
+	margin:0;
+	padding:0;
+	visibility: hidden;
+}
+
+.btAjuda
+{
+	vertical-align: middle;
+	border:0;
+	margin:0;
+	padding:0;
 }

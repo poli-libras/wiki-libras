@@ -16,7 +16,7 @@
 
 	<jsp:include page="/header.jsp"/>
 
-	<div class="conteudo" id="passo_1">
+	<div class="conteudo" id="passo_0">
 		<h2>Inclusão de sinal</h2>
 		
 		<c:forEach var="error" items="${errors}">
