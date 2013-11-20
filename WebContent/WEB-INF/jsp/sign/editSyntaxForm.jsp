@@ -23,7 +23,7 @@
 	<h2>Edição do sinal ${sign.name}</h2>
 	<h3><b>Passo 1:</b> Informações sobre o contexto sintático da frase em português</h3>
 	
-	<form method="POST" action="editSyntax">
+	<form method="POST" action="editSyntax" target="_top">
 	
 		<fieldset>
 		
