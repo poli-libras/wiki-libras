@@ -8,6 +8,7 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.view.Results;
 import br.usp.libras.sign.Sign;
 import br.usp.libras.sign.VerbType;
+import br.usp.libras.sign.symbol.HandSide;
 import br.usp.wikilibras.data.SignDaoFactory;
 
 @Resource
@@ -87,9 +88,9 @@ public class SignSyntaxController {
         }
 
         // por padrão, o primeiro símbolo a ser criado/editado é o primeiro do sinal (sequẽncia temporal)
-        this.signEditionSession.setSignIndex(1);
+        this.signEditionSession.setSymbolIndex(1);
         if (this.signEditionSession.isNewSign()) {
-            this.result.use(Results.logic()).redirectTo(SignSymbolController.class).editSymbolForm(); // edita símbolo 1 em caso de inserção
+            this.result.use(Results.logic()).redirectTo(SignLocationController.class).editLocationForm(HandSide.RIGHT); // edita símbolo 1 em caso de inserção
         } else {
             this.daoFactory.getDao().merge(this.signEditionSession.getSign());
             this.result.use(Results.logic()).redirectTo(SignSymbolController.class).editSymbolsForm(); // usuário escolhe qual símbolo editar (caso edição)

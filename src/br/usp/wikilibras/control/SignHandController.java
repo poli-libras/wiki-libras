@@ -40,10 +40,11 @@ public class SignHandController {
      * @param side diz se é mão dominante ou não-dominante que está sendo editada
      * @return
      */
-    public Sign editHandForm(HandSide side) {
+    public Sign editHandForm() {
 
-        // fornece para o formulário informação de configurações de mão disponíveis
-
+        HandSide side = this.signEditionSession.getSide();
+    	
+    	// fornece para o formulário informação de configurações de mão disponíveis
         // lista com grupos de locações
         List<ShapeGroup> shapeGroups = new ArrayList<ShapeGroup>();
         // lista com todas as locações
@@ -64,19 +65,19 @@ public class SignHandController {
                 }
             }
         }
-
+        
         result.include("shapes", HandShape.values());
         result.include("shapeGroups", shapeGroups);
         result.include("shapesMap", shapeMap);
         result.include("fingers", FingersMovement.values());
-        result.include("signIndex", this.signEditionSession.getSignIndex());
+        result.include("signIndex", this.signEditionSession.getSymbolIndex());
         result.include("handSide", side); // formulário precisa saber qual mão está sendo editada
 
         // caso estejamos editando o sinal
         if (!this.signEditionSession.isNewSign()) {
 
             // devemos passar ao fomrulário a mão a ser editada
-            int idx = this.signEditionSession.getSignIndex();
+            int idx = this.signEditionSession.getSymbolIndex();
             Hand hand = null;
             if (side == HandSide.RIGHT)
                 hand = this.signEditionSession.getSign().getSymbols().get(idx - 1).getRightHand();
@@ -97,7 +98,7 @@ public class SignHandController {
      */
     public Sign editHand(Hand hand) {
 
-        int signIndex = this.signEditionSession.getSignIndex();
+        int signIndex = this.signEditionSession.getSymbolIndex();
         hand.setSide(this.signEditionSession.getSide());
 
         // ao atualizar a mão, devemos manter o mesmo movimento de antes!

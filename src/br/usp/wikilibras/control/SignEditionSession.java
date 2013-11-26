@@ -21,7 +21,7 @@ class SignEditionSession {
     private Sign sign;
     // índice do símbolo sendo editado como é mostrado para o usuário 
     // na lista é acessado como signIndex-1
-    private int signIndex = 1; 
+    private int symbolIndex = 1; 
     private HandSide side;
     private boolean twoHands = true;
     //indica se estamos editando um novo sinal
@@ -33,11 +33,11 @@ class SignEditionSession {
     public void setSign(Sign sign) {
         this.sign = sign;
     }
-    public int getSignIndex() {
-        return signIndex;
+    public int getSymbolIndex() {
+        return symbolIndex;
     }
-    public void setSignIndex(int signIndex) {
-        this.signIndex = signIndex;
+    public void setSymbolIndex(int symbolIndex) {
+        this.symbolIndex = symbolIndex;
     }
     public HandSide getSide() {
         return side;
@@ -52,7 +52,7 @@ class SignEditionSession {
         this.twoHands = twoHands;
     }
     public void incrementSignIndex() {
-        this.signIndex = this.signIndex + 1;
+        this.symbolIndex = this.symbolIndex + 1;
     }
     public boolean isNewSign() {
         return newSign;
@@ -60,4 +60,7 @@ class SignEditionSession {
     public void setNewSign(boolean newSign) {
         this.newSign = newSign;
     }
+    public boolean isNewSymbol() {
+		return this.getSign().getSymbols().size() < this.getSymbolIndex();
+	}
 }

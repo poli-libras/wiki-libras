@@ -16,6 +16,7 @@ import br.usp.libras.sign.face.Nose;
 import br.usp.libras.sign.face.Others;
 import br.usp.libras.sign.face.Teeth;
 import br.usp.libras.sign.face.Tongue;
+import br.usp.libras.sign.symbol.HandSide;
 
 @Resource
 @Path("/sign")
@@ -41,7 +42,7 @@ public class SignFaceController {
      */
     public Sign editFaceForm() {
 
-        int idx = this.signEditionSession.getSignIndex();
+        int idx = this.signEditionSession.getSymbolIndex();
 
         // fornece os subsídios ao formulário
         result.include("chins", Chin.values());
@@ -84,7 +85,7 @@ public class SignFaceController {
         if ((face != null) && (face.allIsNada()))
             face = null;
 
-        int signIndex = this.signEditionSession.getSignIndex();
+        int signIndex = this.signEditionSession.getSymbolIndex();
 
         // atualiza a expressão facial
         if (!noFace) {
@@ -96,7 +97,7 @@ public class SignFaceController {
         // decide se se acrescenta mais símbolos ou se finaliza edição
         if (moreSymbols) {
             this.signEditionSession.incrementSignIndex();
-            this.result.use(Results.logic()).redirectTo(SignSymbolController.class).editSymbolForm();
+            this.result.use(Results.logic()).redirectTo(SignLocationController.class).editLocationForm(HandSide.RIGHT);
         } else {
             // finaliza edição!
             this.result.use(Results.logic()).redirectTo(SignController.class).finish();

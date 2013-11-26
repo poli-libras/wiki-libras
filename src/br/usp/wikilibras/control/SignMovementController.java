@@ -46,7 +46,7 @@ public class SignMovementController {
             // magnitudes: feito desse jeito pra alterar a ordem do array, 
             // para que a opção default fique em primeiro
         result.include("magnitudes", new Magnitude[]{Magnitude.NORMAL, Magnitude.CURTO, Magnitude.LONGO}); 
-        result.include("signIndex", this.signEditionSession.getSignIndex());
+        result.include("signIndex", this.signEditionSession.getSymbolIndex());
         result.include("handSide", this.signEditionSession.getSide());
         result.include("noMove", false); // padrão, em caso de criação de sinal
 
@@ -55,7 +55,7 @@ public class SignMovementController {
 
             // devemos informar ao formulário o movimento a ser editado
             HandSide side = this.signEditionSession.getSide();
-            int idx = this.signEditionSession.getSignIndex();
+            int idx = this.signEditionSession.getSymbolIndex();
             Hand hand = null;
             if (side == HandSide.RIGHT)
                 hand = this.signEditionSession.getSign().getSymbols().get(idx - 1).getRightHand();
@@ -84,7 +84,7 @@ public class SignMovementController {
      */
     public void editHandMovement(boolean noMove, HandMovement handMovement, String[] direction, String[] magnitude) {
 
-        int signIndex = this.signEditionSession.getSignIndex();
+        int signIndex = this.signEditionSession.getSymbolIndex();
         HandSide side = this.signEditionSession.getSide();
 
         Hand hand = null;
@@ -121,7 +121,7 @@ public class SignMovementController {
         // decide se edita a mão não-dominante ou se passa para a expressão facial
         if (side == HandSide.RIGHT) {
             if (this.signEditionSession.isTwoHands()) {
-                this.result.use(Results.logic()).redirectTo(SignHandController.class).editHandForm(HandSide.LEFT);
+                this.result.use(Results.logic()).redirectTo(SignLocationController.class).editLocationForm(HandSide.LEFT);
             } else {
                 this.result.use(Results.logic()).redirectTo(SignFaceController.class).editFaceForm();
             }

@@ -28,7 +28,8 @@ public class MyPathResolver extends DefaultPathResolver{
 
 	public static String SIGN_CONTROLLER_FOLDER = "sign";
 	public static String[] CONTROLLERS = new String[]{"SignSyntaxController", "SignSymbolController",
-		"SignHandController", "SignMovementController", "SignFaceController"};
+		"SignHandController", "SignMovementController", "SignFaceController", "SignLocationController", 
+		"SignContactController"};
 	
 	private FormatResolver resolver;
 	
