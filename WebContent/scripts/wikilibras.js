@@ -1,24 +1,19 @@
 var currentHelpDisplayed;
-var nSteps = 7;
+var nSteps = 8;
 
-$(document).bind("pageinit", function ()
+$(document).on("ready", function ()
 {
-	$(".btAjuda").on("tap", showHelp);
+	$(".btAjuda").on("click", showHelp);
 	
 	var step = $(".conteudo")[0].id.split("_")[1];
-	
+
 	for (var i = 1; i <= nSteps; i++)
 	{
-		if (i < step)
-		{
-			$("#bolinha_" + i).css("background-position", "0px -60px");
-		}
-		else if (i > step)
+		if (i != step)
 		{
 			$("#bolinha_" + i).css("background-position", "0px -120px");
 		}
 	}
-	
 });
 
 function showHelp (e)
