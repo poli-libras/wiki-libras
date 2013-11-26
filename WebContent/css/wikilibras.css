@@ -27,6 +27,10 @@ body {
 	width: 57.1%;
 }
 
+#passo_2 {
+	width: 57.1%;
+}
+
 /*
 *	Estilo para o formulário
 */
@@ -54,6 +58,7 @@ fieldset {
 	width: 258px;
 	border-width: thin;
 	margin-top: 0.5em;
+	display:block;
 }
 
 .submit
@@ -85,7 +90,7 @@ fieldset {
 	background-image: url(../media/images/linha_fundo.png);
 	background-position: 0px 26px;
 	background-repeat: repeat-x;
-	width: 473px;
+	width: 533px;
 	height: 60px;
 }
 
