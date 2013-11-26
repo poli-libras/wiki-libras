@@ -1,0 +1,36 @@
+#container_menino {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:358px;
+	height:347px;
+}
+
+.fundo {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.location {
+	position:absolute;
+	background-image: url("../media/spacer.gif");
+}
+
+.location_img
+{
+	visibility: hidden;
+}
+
+#testa {
+	left:117px;
+	top:0px;
+	width:124px;
+	height:64px;
+}
+
+#testa_img {
+	position:absolute;
+	left:117px;
+	top:0px;
+}
