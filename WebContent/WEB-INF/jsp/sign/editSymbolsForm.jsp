@@ -25,12 +25,12 @@
     <c:forEach var="symbol" items="${symbols}">
     	<c:set var="index" value="${index + 1}" />	
     	<li>Símbolo ${index} - 
-    		<a href="${pageContext.request.contextPath}/sign/symbol?index=${index}">Editar</a> - 
+    		<a href="${pageContext.request.contextPath}/sign/location?symbol_index=${index}">Editar</a> - 
     		<a href="">Excluir</a></li>
     </c:forEach>
     </ul>
     
-    <p><a href="${pageContext.request.contextPath }/sign/symbol?index=${index+1}">Novo símbolo</a></p>
+    <p><a href="${pageContext.request.contextPath }/sign/location?symbol_index=${index+1}">Novo símbolo</a></p>
     
     <p><a href="${pageContext.request.contextPath }/sign/editSyntaxForm">Voltar para sintaxe</a></p>
     

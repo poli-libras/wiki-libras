@@ -5,23 +5,16 @@
 <html>
 <head>
 <jsp:include page="/includes/globalInclude.jsp"/>
-<script src="${pageContext.request.contextPath}/scripts/wikilibras.js" type="text/javascript"></script>
 <title>WikiLibras</title>
 </head>
 
 <body>
 
-<img id="seta" src="${ pageContext.request.contextPath }/media/images/seta.png"></img>
-<div id="textoAjuda">
-	<b>Ajuda</b><br><br>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non diam elit. Nulla porttitor ultrices neque, sed lacinia risus. Pellentesque pretium hendrerit nunc quis commodo. 
-</div>
-	
 <jsp:include page="/header.jsp"/>
 
 <div class="conteudo" id="passo_1">
 	<h2>Edição do sinal ${sign.name}</h2>
-	<h3><b>Passo 1:</b> Informações sobre o contexto sintático da frase em português</h3>
+	<h3>Informações sobre o contexto sintático da frase em português</h3>
 	
 	<form method="POST" action="editSyntax" target="_top">
 	
@@ -40,7 +33,7 @@
 				<img class="btAjuda" src="${ pageContext.request.contextPath }/media/images/ajuda.png"></img>
 			</div>	
 		
-			<div class="option" id="words">
+			<div class="option" id="palavras">
 				<span class="nomeCampo">Palavras correspondentes:</span> 
 				<img class="btAjuda" src="${ pageContext.request.contextPath }/media/images/ajuda.png"></img>
 				<c:forEach var="word" items="${words}">
@@ -75,18 +68,11 @@
 			
 		</fieldset>
 		
-		<div id="progresso">
-			<div class="bolinha" id="bolinha_1"></div>
-			<div class="bolinha" id="bolinha_2"></div>
-			<div class="bolinha" id="bolinha_3"></div>
-			<div class="bolinha" id="bolinha_4"></div>
-			<div class="bolinha" id="bolinha_5"></div>
-			<div class="bolinha" id="bolinha_6"></div>
-			<div class="bolinha" id="bolinha_7"></div>
-			<input type="submit" class="submit" value=""/>
-		</div>
+		<jsp:include page="/progresso.jsp"/>
 		
 	</form>
+	
+	<jsp:include page="/ajuda.jsp"/>
 </div>
 </body>
 </html>
